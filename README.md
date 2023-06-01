@@ -1,6 +1,7 @@
 # Train Reservation System
 ![t1](https://github.com/syedCeyana1/TrainReservation/assets/127887724/47dac53c-4be7-4e2c-94a8-eadaa4d25084)
-![t2](https://github.com/syedCeyana1/TrainReservation/assets/127887724/f834adaa-15a8-4027-8ba4-c6893166f6c6)
+![t2](https://github.com/syedCeyana1/TrainReservation/assets/127887724/e880cb19-066e-45f1-b9cf-ebe2fa85e79b)
+
 
 Complete code base of Train Reservation System .
 In this Project we are covering these functionalities mentioned below 
