@@ -1,10 +1,13 @@
-# BusReservationComplete
-Complete code base of Bus Reservation System .
+# Train Reservation System
+![t1](https://github.com/syedCeyana1/TrainReservation/assets/127887724/47dac53c-4be7-4e2c-94a8-eadaa4d25084)
+![t2](https://github.com/syedCeyana1/TrainReservation/assets/127887724/f834adaa-15a8-4027-8ba4-c6893166f6c6)
+
+Complete code base of Train Reservation System .
 In this Project we are covering these functionalities mentioned below 
 
 #Providing provision of Registration of User for that ::
   * we have made a User Table with one to Many mapping with Role . Before running your code you have to insert ADMIN and USER Role in the Role table then while you Run the 
-    Application you go on Register Page --> Enter Details --> Sumit . The Call will go to Registration COntroller and save the data to Database and then it will redirect 
+    Application you go on Register Page --> Enter Details --> Ceyana . The Call will go to Registration COntroller and save the data to Database and then it will redirect 
     it to /login .
     
 #/login  ->> you enter your email Id and password -> the call will go to login Controller --> User Service where it loadsUserByUserName -> it checkss the User present in DB 
@@ -14,9 +17,9 @@ In this Project we are covering these functionalities mentioned below
 #Custom Success Handler ->> The Custom Success Handler , Handles the request basis on the ROle of the User after Login process --> if the ROle is Admin , it will redirect 
                             to Admin Dashboard , if Role is User then it will redirect to User Dashboard .
                             
-#Admin Dashboard ->> So , Admin Dashboard shows a form to upload the Bus data and it gets stored in Bus data Table .
-#User Dashboard ->> User Dashboard shows a filter to filter the Buses available for your to destination to from destination on a particular date . 
-#Filetered data ->> Buses Data is visible on Dashboard screen in the form of table . When you Click on Book button it will take you to the Booking page .
+#Admin Dashboard ->> So , Admin Dashboard shows a form to upload the Train data and it gets stored in Train data Table .
+#User Dashboard ->> User Dashboard shows a filter to filter the Trains available for your to destination to from destination on a particular date . 
+#Filetered data ->> Trains Data is visible on Dashboard screen in the form of table . When you Click on Book button it will take you to the Booking page .
 #Booking Page ->> Here you will enter the no of passengers who are tralvelling along with you and automatically the Cost you have to pay will be calculated after 
                   you click on pay .
                   
@@ -30,4 +33,4 @@ In this Project we are covering these functionalities mentioned below
 
 
                        
-    This is the Complete Jist of the Bus Reservation System.
+    This is the Complete Jist of the Train Reservation System.
