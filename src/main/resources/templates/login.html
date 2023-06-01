@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Railway Ticket Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color: rgb(255, 255, 255);
+        }
+        .carousel-image {
+            width: 100%;
+            height: auto;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            background-color: #f8f8f8;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        body {
+            background-image: url("https://i.ibb.co/Gs7R8PR/C0-C9-AB4-C-56-AA-41-ED-AFBE-49442-F459-CA4.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header-box {
+            text-align: center;
+            background-color: #455790;
+            padding: 50px;
+            border-radius: auto;
+            width: auto;
+        }
+        
+        .header-text {
+            color: #f8f8f8;
+            font-family: 'Arial', sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        
+        .header-hr {
+            border-color: #200505;
+            border-width: 1px;
+            width: auto;
+            margin: 20px;
+        }
+        .header-hr {
+            border-color: #200505;
+            border-width: 1px;
+            width: auto;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- create navigation bar (header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top"></nav>
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+            <div class="header-box">
+                <h1 class="header-text">Railway Ticket Booking</h1>
+            </div>
+            <hr class="header-hr">
+        </div>
+    </div>
+</nav>
+
+<!-- create image carousel -->
+<div id="imageCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#imageCarousel" data-slide-to="1"></li>
+        <li data-target="#imageCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img class="carousel-image" src="https://i.ibb.co/whpQwct/t4.png">
+        </div>
+        <div class="item">
+            <img class="carousel-image" src="https://i.ibb.co/TLJNjKS/t3.png">
+        </div>
+        <div class="item">
+            <img class="carousel-image" src="https://i.ibb.co/j4ghG0L/t2.png">
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#imageCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#imageCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+<br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div th:if="${param.error}">
+                <div class="alert alert-info">Email or Password entered is wrong. Please check and login again.</div>
+            </div>
+            
+            <h2 class="header-text1">Login</h2>
+            <hr class="header-hr">
+            <form th:action="@{/login}" method="post" th:object="${user}">
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <input id="email" class="form-control" th:field="*{username}" required autofocus="autofocus" />
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="control-label" for="password">Password</label>
+                    <input id="password" class="form-control" type="password" th:field="*{password}" required autofocus="autofocus" />
+                </div>
+                <br><br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                    <span>New User? <a href="/" th:href="@{/registration}">Register here</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<footer class="footer">
+    <p>Copyright @ Train Booking System.</p>
+
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

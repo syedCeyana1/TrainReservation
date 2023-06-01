@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Railway Ticket Booking System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-image: url('https://i.ibb.co/Jd5JDz9/1.jpg');
+            background-size: cover;
+            padding: 30px;
+        }
+        
+        .anchor {
+            margin: 6px;
+            background-color: #e7f3f9;
+            border-color: #d9edf7;
+        }
+        
+        input,
+        label {
+            display: block;
+        }
+        
+        body {
+            background-image: url('https://i.ibb.co/582W2Kc/CDCF840-B-BD58-4035-83-A9-6-A72-A0-AC34-A9-2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            margin-top: 50px;
+        }
+        
+        h1 {
+            font-size: 400%;
+            color: rgb(246, 241, 241);
+            text-align: left;
+        }
+        
+        h3 {
+            font-size: 100%;
+            color: red;
+            text-align: center;
+        }
+        h2{
+            font-size: 300%;
+            color: rgb(17, 14, 14); 
+            text-align: left;
+        }
+        h4 {
+            font-size: 150%;
+            color: rgb(246, 241, 241);
+            text-align: left;
+        }
+        .form-group {
+            width: 50%;
+        }
+        
+        .button {
+            margin-top: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- create navigation bar ( header) -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container"> 
+            <div class="navbar-header"> 
+               <h1>Booking Page</h1>
+               <div class = "container">
+               <div><h4> Hi, Welcome <span th:text ="*{userDetails}"></span> </h4>
+                            </div>
+               </div>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br><br><br><br><br>
+    <!-- Create HTML registration form -->
+    <div class="container">
+        <div class="row">
+            
+
+                <!-- success message -->
+                <div th:if="${param.success}">
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                  <div class="alert alert-info">Your Booking is Done , Go to My Bookings section to check your Booking by clicking on Dashboard.</div>
+                </div>
+                <br><br><br><br><br>
+                <h2>Booking</h2>
+                <form th:action="@{/dashboard/booking}" method="post" 
+                             th:object="${record}">
+                             <div class= "container">
+                             <div class="row">
+                             <div class="col-md-6">
+                    <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="from">
+                           From </label>
+                        <input id="from" class="form-control" 
+                                 th:field="*{fromDestination}" required readonly="readonly"
+                            autofocus="autofocus" />
+                    </div>
+                    </div>
+
+<div class="col-md-6">
+                    <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="to"> To 
+                         </label> <input id="to" class="form-control"
+                            th:field="*{toDestination}" required readonly="readonly" autofocus="autofocus" 
+                                />
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <div class="row">
+                    <div class="col-md-6">
+		<div class="form-group" >
+		        <label  class="control-label"  for="filterDate">Date
+		        </label><input type="date" th:field="*{filterDate}" id="filterDate" required readonly="readonly" autofocus="autofocus" />
+		    </div>
+		    </div>
+		    <div class="col-md-6">
+		    <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="price"> Price 
+                         </label> <input id="price" class="form-control"
+                            th:field="*{price}" required readonly="readonly" autofocus="autofocus" 
+                                />
+                    </div>
+		    </div>
+		    </div>
+		    
+		    <div class="row">
+		    <div class="col-md-6">
+		    <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="noOfPersons"> No of Persons 
+                         </label> <input id="noOfPersons" class="form-control"
+                            th:field="*{noOfPersons}" required  autofocus="autofocus" onchange="updateFiled();"
+                                />
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                     <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="totalCalculated"> Total Amount to be Paid 
+                         </label> <input id="totalCalculated" class="form-control"
+                            th:field="*{totalCalculated}" required readonly="readonly" autofocus="autofocus" 
+                                />
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                     <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="trainName"> Train Name 
+                         </label> <input id="trainName" class="form-control"
+                            th:field="*{trainName}" required readonly="readonly" autofocus="autofocus" 
+                                />
+                    </div>
+                    </div>
+                   
+    
+                    
+                   <div class="col-md-6">
+                   
+                   <div class="form-group" style="width: 80%;">
+                        <label class="control-label" for="time"> Departure Time 
+                         </label> <input id="time" class="form-control"
+                            th:field="*{time}" required readonly="readonly" autofocus="autofocus" 
+                                />
+                    </div>
+                    
+                     </div>
+                     </div>
+                     <div class="row">
+                     <div class="col-md-6">
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="margin-top:25px;">
+                          Pay </button>
+                        
+                    </div>
+                    </div>
+                     </div>
+                    </div>
+                    <div class="form-group">
+                        <span>Go To Dashboard <a href="/" 
+                  th:href="@{/dashboard}">DashBoard
+                        </a></span>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function updateFiled(){
+    	
+    	var price= document.getElementById("price").value;
+    	var totalpassenger = document.getElementById("noOfPersons").value;
+    	var totalValue = price * totalpassenger;
+    	
+    	document.getElementById("totalCalculated").value = totalValue;
+    	
+    }
+    </script>
+</body>
+</html>

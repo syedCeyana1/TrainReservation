@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			
+		label {
+    display:block;
+    }
+    
+    .footer {
+            background-color: #f8f8f8;
+            padding: 5px;
+            text-align: center;
+        }
+        
+    .textColor {
+    color: #a8bbf8;
+    }
+    
+    h2{
+        text-align: center;
+            color: #ffffff;
+            background-color: #33278f;
+            padding: 30px;
+            font-size: 200% ;
+       }
+    
+    h3 {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+    }
+    
+    h4 {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        	
+	</style>
+	</head>
+	<body>
+	<h2>Train Ticket Confirmation</h2>
+		<div class="container">
+			<div class="row">
+			<div class= "col-md-6">
+					<label>Date of Departure:</label><div class="textColor"><p th:text ="${date}"/></div>
+					</div>
+					<div class= "col-md-6">
+					<label>Name of Primary Passenger:</label><div class="textColor"><p th:text ="${name}"/></div>
+					</div>
+					</div>
+					<div class = "row">
+					<div class= "col-md-6">
+					<label>Ticket No:</label><div class="textColor">#123456</div>
+					</div>
+					<div class= "col-md-6">
+					<label>No. of Passengers Traveling:</label><div class="textColor"><p th:text ="${noOfPass}"/></div>
+					</div>
+					</div>
+					<div class="row">
+					<div class= "col-md-6">
+					<label>Departure:</label><div class="textColor" ><p th:text ="${From}"/></div>
+					</div>
+					<div class= "col-md-6">
+					<label>Destination:</label><div class="textColor"><p th:text ="${to}"/></div>
+					</div>
+				</div>
+				<div class="row">
+				<div class= "col-md-6">
+					<label>Train Name:</label><div class="textColor"><p th:text ="${trainName}"/></div>
+					</div>
+				</div>
+			</div>
+<h4>Note: Along with the ticket bring Primary Passenger's Id Proof.</h4>
+<h3>HAVE A SAFE AND HAPPY JOURNEY</h3>
+<footer class="footer">
+    <p>Copyright @ Train Booking System.</p>
+
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
